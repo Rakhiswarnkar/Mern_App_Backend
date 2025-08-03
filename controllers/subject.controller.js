@@ -69,6 +69,16 @@ export const addChapter = async (req, res) => {
         console.log(error)
         res.status(500).json({ message: 'server error', error })
     }
+}
 
+export const getSubject = async(req, res) =>{
+    try{
+        const subjectRes = await subjectModel.find()
+        if(!subjectRes){
+            res.status(404).json({message:'subject not found'})
+        }
+        res.status(200).json(subjectRes)
+    }catch(error){
 
+    }
 }
