@@ -1,10 +1,10 @@
 import upload from '../middleware/uploadLocal.js';
-import {addChapter, addSubject} from '../controllers/subject.controller';
+import {addChapter, addSubject} from '../controllers/subject.controller.js';
 import express from 'express';
 
-let router = express.Router();
+let routerSubject = express.Router();
 
-router.post('/subject',upload.single('image'), addSubject)
-router.post('/subject/:id/chapters', upload.single('pdf'), addChapter)
+routerSubject.post('/subject',upload.single('image'), addSubject)
+routerSubject.post('/subject/:id/chapters', upload.single('pdf'), addChapter)
 
-export default router
+export default routerSubject

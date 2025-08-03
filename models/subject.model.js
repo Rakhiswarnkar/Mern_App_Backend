@@ -17,7 +17,7 @@ const subjectSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    imageUrl:String,
+    image:String,
     chapters:[chaptersSchema]
 })
 
