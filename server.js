@@ -1,5 +1,6 @@
 // server.js or index.js
 import express from 'express';
+import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './db.js'; // Make sure this works
 import router from './routes/registerUser.routes.js';
@@ -7,10 +8,7 @@ import routerSubject from './routes/subject.router.js';
 
 const app = express();
 app.use(express.json()); // To parse JSON body
-
-app.get('/ping', (req, res) => {
-  res.send('pong');
-});
+app.use(cors());
 
 connectDB(); // Connect to MongoDB
 
